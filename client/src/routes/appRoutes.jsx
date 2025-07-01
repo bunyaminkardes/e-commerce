@@ -4,6 +4,7 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import ProductDetail from "../pages/ProductDetail";
 import Products from "../pages/Products";
+import Search from "../pages/Search";
 
 const AppRoutes = () => {
     return (
@@ -14,6 +15,7 @@ const AppRoutes = () => {
                 <Route path="/register" element={<Register />} />
                 <Route path="/product-detail/:id" element={<ProductDetail/>} />
                 <Route path="/category/:category" element={<Products/>} />
+                <Route path="/search/:searchQuery" element={<Search/>} />
             </Routes>
         </Router>
     );

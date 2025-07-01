@@ -1,33 +1,33 @@
-import { useEffect, useState } from "react";
 import { NavLink, useParams } from "react-router-dom";
-import { getProductsByCategory } from "../api/products";
 import Layout from "../components/layout";
+import { useState } from "react";
+import { useEffect } from "react";
+import { getProductsBySearch } from "../api/products";
 
-const Products = () => {
-    const { category } = useParams();
-    const [products, setProducts] = useState([]);
+const Search = () => {
 
-    const fetchData = async () => {
-        try {
-            const data = await getProductsByCategory(category);
-            setProducts(data);
-        } catch (error) {
-            console.error(error);
-        }
-    }
+    const { searchQuery } = useParams();
+    const [searchResults, setSearchResults] = useState([]);
 
     useEffect(() => {
-        fetchData();
-    }, [category]);
+        const fetchSearchResults = async () => {
+            if (searchQuery) {
+                const data = await getProductsBySearch(searchQuery);
+                setSearchResults(data);
+            }
+        }
+        fetchSearchResults();
+    }, [searchQuery]);
 
     return (
         <Layout>
             <div className="container py-[2rem]">
                 <h2 className="text-[26px] font-[400]">
-                    {category} kategorisi
+                    Arama Sonuçları:
                 </h2>
                 <div className="grid grid-cols-12 gap-x-[2rem] gap-y-[2rem] my-[3rem]">
-                    {products.map((product) => (
+                    {searchResults.length === 0 && <span className="col-span-12">Hiçbir sonuç bulunamadı...</span>}
+                    {searchResults.map((product) => (
                         <div key={product._id} className="col-span-12 lg:col-span-3">
                             <NavLink to={`/product-detail/${product._id}`} className="flex flex-col">
                                 <img className="object-cover" src={product.images} alt="Placeholder" />
@@ -42,4 +42,4 @@ const Products = () => {
     );
 }
 
-export default Products;
+export default Search;

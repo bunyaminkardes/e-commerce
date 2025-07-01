@@ -14,7 +14,7 @@ export const loginUser = async (email, password) => {
     }
 }
 
-export const RegisterUser = async (email, password) => {
+export const registerUser = async (email, password) => {
     const data = {
         email: email,
         password: password

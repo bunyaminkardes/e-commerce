@@ -1,6 +1,20 @@
 const userController = {};
 const userModel = require("../models/userModel");
 
+userController.getMe = async (req, res) => {
+    try {
+        const user = await userModel.findById(req.user.userId).select("-password");
+
+        if (!user) {
+            return res.status(404).json({ message: "Kullanıcı bulunamadı." });
+        }
+
+        res.json({ user });
+    } catch (err) {
+        res.status(500).json({ message: "Kullanıcı bilgileri alınamadı." });
+    }
+};
+
 userController.getAllUsers = async (req, res) => {
     try {
         const users = await userModel.find();

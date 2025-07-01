@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useState } from "react";
-import { RegisterUser } from "../api/auth";
+import { registerUser } from "../api/auth";
 
 const Register = () => {
 
@@ -10,7 +10,7 @@ const Register = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const data = await RegisterUser(email, password);
+            const data = await registerUser(email, password);
             console.log("register işlemi sonucu ->", data);
         } catch (err) {
             console.error(err);

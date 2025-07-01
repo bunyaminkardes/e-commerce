@@ -1,16 +1,24 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { FaCartShopping, FaUser } from "react-icons/fa6";
 import { BsCart3, BsPerson } from "react-icons/bs";
 import { FaSearch } from "react-icons/fa";
 import CartPopup from "./cartPopup";
 import { useState } from "react";
+import { useAuth } from "../contexts/authContext";
 
 const Header = () => {
 
-    const [isCartOpen, setIsCartOpen] = useState(false);
+    const { user } = useAuth();
 
-    const handleSubmit = (e) => {
+    const [isCartOpen, setIsCartOpen] = useState(false);
+    const [searchQuery, setSearchQuery] = useState("");
+    const navigate = useNavigate();
+
+    const handleSearch = (e) => {
         e.preventDefault();
+        if (searchQuery.trim() !== "") {
+            navigate(`/search/${encodeURIComponent(searchQuery.trim())}`);
+        }
     }
 
     return (
@@ -39,27 +47,34 @@ const Header = () => {
                     <NavLink to="/category/kitap">
                         KİTAP
                     </NavLink>
-                    <div className="relative w-[200px]">
+                    <form onSubmit={handleSearch} className="relative w-[200px]">
                         <input
                             type="search"
                             className="w-full border border-gray-300 rounded-[4px] pr-8 pl-2 py-[6px] text-sm"
                             placeholder="Ara..."
+                            onChange={(e) => setSearchQuery(e.target.value)}
                         />
                         <FaSearch
                             size={16}
                             color="#2f3033"
                             className="absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none"
                         />
-                    </div>
+                    </form>
                     <div onClick={() => setIsCartOpen(!isCartOpen)} className="flex ml-auto space-x-[6px] items-center relative cursor-pointer">
                         <BsCart3 size={20} color="#2f3033" />
                         <span>Sepetim</span>
                         {isCartOpen && <CartPopup />}
                     </div>
-                    <NavLink to={"/Login"} className="flex space-x-[6px] items-center">
-                        <BsPerson size={20} color="#2f3033" />
-                        <span>Giriş Yap</span>
-                    </NavLink>
+                    {user ?
+                        <div className="flex space-x-[6px] items-center">
+                            <BsPerson size={20} color="#2f3033" />
+                            <span>{user.username}</span>
+                        </div>
+                        :
+                        <NavLink to={"/login"} className="flex space-x-[6px] items-center">
+                            <BsPerson size={20} color="#2f3033" />
+                            <span>Giriş Yap</span>
+                        </NavLink>}
                 </div>
             </div>
         </header>

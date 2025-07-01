@@ -49,12 +49,18 @@ authController.login = async (req, res) => {
             { expiresIn: "7d" }
         );
 
+        res.cookie("token", token, {
+            httpOnly: true,
+            secure: process.env.NODE_ENV === "production",
+            sameSite: "Strict",
+            maxAge: 7 * 24 * 60 * 60 * 1000  //7d
+        });
+
         res.json({
             message: "Giriş başarılı.",
-            token,
             user: {
                 id: user._id,
-                name: user.name,
+                username: user.username,
                 email: user.email,
                 role: user.role
             }
@@ -63,6 +69,14 @@ authController.login = async (req, res) => {
     } catch (error) {
         res.status(500).json({ message: "Giriş sırasında bir hata oluştu.", error });
     }
+}
+
+authController.logout = (req, res) => {
+    res.clearCookie("token", {
+        httpOnly: true,
+        sameSite: "Strict",
+        secure: process.env.NODE_ENV === "production"
+    });
 }
 
 module.exports = authController;

@@ -24,7 +24,7 @@ const seedDatabase = async () => {
             // Giyim
             {
                 name: 'Beyaz Tişört',
-                description: 'Konforlu ve hafif beyaz tişört',
+                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non purus sapien. Donec vitae lacus ultricies, mollis nisi id, vehicula ex. Integer quis eleifend turpis. Quisque luctus sapien nulla, pretium tristique nulla ornare eget. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus vitae feugiat arcu. Quisque sed interdum dolor.',
                 price: 185,
                 stock: 100,
                 category: 'Giyim',
@@ -32,7 +32,7 @@ const seedDatabase = async () => {
             },
             {
                 name: 'Kot Pantolon',
-                description: 'Dayanıklı ve şık kot pantolon',
+                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non purus sapien. Donec vitae lacus ultricies, mollis nisi id, vehicula ex. Integer quis eleifend turpis. Quisque luctus sapien nulla, pretium tristique nulla ornare eget. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus vitae feugiat arcu. Quisque sed interdum dolor.',
                 price: 299,
                 stock: 80,
                 category: 'Giyim',
@@ -40,7 +40,7 @@ const seedDatabase = async () => {
             },
             {
                 name: 'Kazak',
-                description: 'Soğuk havalar için ideal kazak',
+                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non purus sapien. Donec vitae lacus ultricies, mollis nisi id, vehicula ex. Integer quis eleifend turpis. Quisque luctus sapien nulla, pretium tristique nulla ornare eget. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus vitae feugiat arcu. Quisque sed interdum dolor.',
                 price: 245,
                 stock: 50,
                 category: 'Giyim',
@@ -48,7 +48,7 @@ const seedDatabase = async () => {
             },
             {
                 name: 'Hoodie',
-                description: 'Rahat kesim kapüşonlu hoodie',
+                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non purus sapien. Donec vitae lacus ultricies, mollis nisi id, vehicula ex. Integer quis eleifend turpis. Quisque luctus sapien nulla, pretium tristique nulla ornare eget. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus vitae feugiat arcu. Quisque sed interdum dolor.',
                 price: 320,
                 stock: 70,
                 category: 'Giyim',
@@ -56,7 +56,7 @@ const seedDatabase = async () => {
             },
             {
                 name: 'Ceket',
-                description: 'Su geçirmez dış giyim ceketi',
+                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non purus sapien. Donec vitae lacus ultricies, mollis nisi id, vehicula ex. Integer quis eleifend turpis. Quisque luctus sapien nulla, pretium tristique nulla ornare eget. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus vitae feugiat arcu. Quisque sed interdum dolor.',
                 price: 499,
                 stock: 30,
                 category: 'Giyim',
@@ -66,7 +66,7 @@ const seedDatabase = async () => {
             // Spor
             {
                 name: 'Koşu Ayakkabısı',
-                description: 'Yastıklamalı tabanıyla rahat koşu deneyimi',
+                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non purus sapien. Donec vitae lacus ultricies, mollis nisi id, vehicula ex. Integer quis eleifend turpis. Quisque luctus sapien nulla, pretium tristique nulla ornare eget. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus vitae feugiat arcu. Quisque sed interdum dolor.',
                 price: 750,
                 stock: 60,
                 category: 'Spor',
@@ -74,7 +74,7 @@ const seedDatabase = async () => {
             },
             {
                 name: 'Yoga Matı',
-                description: 'Kaymaz yüzeyli yoga matı',
+                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non purus sapien. Donec vitae lacus ultricies, mollis nisi id, vehicula ex. Integer quis eleifend turpis. Quisque luctus sapien nulla, pretium tristique nulla ornare eget. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus vitae feugiat arcu. Quisque sed interdum dolor.',
                 price: 180,
                 stock: 90,
                 category: 'Spor',
@@ -82,7 +82,7 @@ const seedDatabase = async () => {
             },
             {
                 name: 'Dambıl Seti',
-                description: 'Evde antrenman için dambıl seti',
+                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non purus sapien. Donec vitae lacus ultricies, mollis nisi id, vehicula ex. Integer quis eleifend turpis. Quisque luctus sapien nulla, pretium tristique nulla ornare eget. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus vitae feugiat arcu. Quisque sed interdum dolor.',
                 price: 420,
                 stock: 40,
                 category: 'Spor',
@@ -90,7 +90,7 @@ const seedDatabase = async () => {
             },
             {
                 name: 'Futbol Topu',
-                description: 'Profesyonel dikişli futbol topu',
+                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non purus sapien. Donec vitae lacus ultricies, mollis nisi id, vehicula ex. Integer quis eleifend turpis. Quisque luctus sapien nulla, pretium tristique nulla ornare eget. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus vitae feugiat arcu. Quisque sed interdum dolor.',
                 price: 200,
                 stock: 100,
                 category: 'Spor',
@@ -98,7 +98,7 @@ const seedDatabase = async () => {
             },
             {
                 name: 'Spor Çantası',
-                description: 'Bölmeli, su geçirmez spor çantası',
+                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non purus sapien. Donec vitae lacus ultricies, mollis nisi id, vehicula ex. Integer quis eleifend turpis. Quisque luctus sapien nulla, pretium tristique nulla ornare eget. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus vitae feugiat arcu. Quisque sed interdum dolor.',
                 price: 280,
                 stock: 60,
                 category: 'Spor',
@@ -108,7 +108,7 @@ const seedDatabase = async () => {
             // Elektronik
             {
                 name: 'Bluetooth Kulaklık',
-                description: 'Kablosuz, gürültü engelleyici kulaklık',
+                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non purus sapien. Donec vitae lacus ultricies, mollis nisi id, vehicula ex. Integer quis eleifend turpis. Quisque luctus sapien nulla, pretium tristique nulla ornare eget. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus vitae feugiat arcu. Quisque sed interdum dolor.',
                 price: 850,
                 stock: 75,
                 category: 'Elektronik',
@@ -116,7 +116,7 @@ const seedDatabase = async () => {
             },
             {
                 name: 'Akıllı Saat',
-                description: 'Kalp atışı ve uyku takibi yapabilen saat',
+                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non purus sapien. Donec vitae lacus ultricies, mollis nisi id, vehicula ex. Integer quis eleifend turpis. Quisque luctus sapien nulla, pretium tristique nulla ornare eget. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus vitae feugiat arcu. Quisque sed interdum dolor.',
                 price: 1200,
                 stock: 50,
                 category: 'Elektronik',
@@ -124,7 +124,7 @@ const seedDatabase = async () => {
             },
             {
                 name: 'Powerbank',
-                description: '10.000 mAh taşınabilir şarj aleti',
+                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non purus sapien. Donec vitae lacus ultricies, mollis nisi id, vehicula ex. Integer quis eleifend turpis. Quisque luctus sapien nulla, pretium tristique nulla ornare eget. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus vitae feugiat arcu. Quisque sed interdum dolor.',
                 price: 320,
                 stock: 100,
                 category: 'Elektronik',
@@ -132,7 +132,7 @@ const seedDatabase = async () => {
             },
             {
                 name: 'Kablosuz Mouse',
-                description: 'Hassas tepkili ergonomik mouse',
+                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non purus sapien. Donec vitae lacus ultricies, mollis nisi id, vehicula ex. Integer quis eleifend turpis. Quisque luctus sapien nulla, pretium tristique nulla ornare eget. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus vitae feugiat arcu. Quisque sed interdum dolor.',
                 price: 150,
                 stock: 70,
                 category: 'Elektronik',
@@ -140,7 +140,7 @@ const seedDatabase = async () => {
             },
             {
                 name: 'Mekanik Klavye',
-                description: 'RGB aydınlatmalı, mavi switch klavye',
+                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non purus sapien. Donec vitae lacus ultricies, mollis nisi id, vehicula ex. Integer quis eleifend turpis. Quisque luctus sapien nulla, pretium tristique nulla ornare eget. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus vitae feugiat arcu. Quisque sed interdum dolor.',
                 price: 650,
                 stock: 40,
                 category: 'Elektronik',
@@ -150,7 +150,7 @@ const seedDatabase = async () => {
             // Kozmetik
             {
                 name: 'Nemlendirici Krem',
-                description: 'Cilt bariyerini güçlendiren yüz kremi',
+                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non purus sapien. Donec vitae lacus ultricies, mollis nisi id, vehicula ex. Integer quis eleifend turpis. Quisque luctus sapien nulla, pretium tristique nulla ornare eget. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus vitae feugiat arcu. Quisque sed interdum dolor.',
                 price: 200,
                 stock: 80,
                 category: 'Kozmetik',
@@ -158,7 +158,7 @@ const seedDatabase = async () => {
             },
             {
                 name: 'Yüz Temizleme Jeli',
-                description: 'Hassas ciltler için uygun temizleyici',
+                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non purus sapien. Donec vitae lacus ultricies, mollis nisi id, vehicula ex. Integer quis eleifend turpis. Quisque luctus sapien nulla, pretium tristique nulla ornare eget. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus vitae feugiat arcu. Quisque sed interdum dolor.',
                 price: 170,
                 stock: 90,
                 category: 'Kozmetik',
@@ -166,7 +166,7 @@ const seedDatabase = async () => {
             },
             {
                 name: 'Güneş Kremi',
-                description: '50 SPF korumalı güneş kremi',
+                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non purus sapien. Donec vitae lacus ultricies, mollis nisi id, vehicula ex. Integer quis eleifend turpis. Quisque luctus sapien nulla, pretium tristique nulla ornare eget. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus vitae feugiat arcu. Quisque sed interdum dolor.',
                 price: 220,
                 stock: 70,
                 category: 'Kozmetik',
@@ -174,7 +174,7 @@ const seedDatabase = async () => {
             },
             {
                 name: 'Parfüm',
-                description: 'Kalıcı ve ferah erkek parfümü',
+                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non purus sapien. Donec vitae lacus ultricies, mollis nisi id, vehicula ex. Integer quis eleifend turpis. Quisque luctus sapien nulla, pretium tristique nulla ornare eget. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus vitae feugiat arcu. Quisque sed interdum dolor.',
                 price: 490,
                 stock: 60,
                 category: 'Kozmetik',
@@ -182,7 +182,7 @@ const seedDatabase = async () => {
             },
             {
                 name: 'Şampuan',
-                description: 'Dökülmeye karşı etkili bitkisel şampuan',
+                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non purus sapien. Donec vitae lacus ultricies, mollis nisi id, vehicula ex. Integer quis eleifend turpis. Quisque luctus sapien nulla, pretium tristique nulla ornare eget. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus vitae feugiat arcu. Quisque sed interdum dolor.',
                 price: 160,
                 stock: 100,
                 category: 'Kozmetik',
@@ -192,7 +192,7 @@ const seedDatabase = async () => {
             // Kitap
             {
                 name: '1984 - George Orwell',
-                description: 'Distopya edebiyatının başyapıtı',
+                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non purus sapien. Donec vitae lacus ultricies, mollis nisi id, vehicula ex. Integer quis eleifend turpis. Quisque luctus sapien nulla, pretium tristique nulla ornare eget. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus vitae feugiat arcu. Quisque sed interdum dolor.',
                 price: 90,
                 stock: 120,
                 category: 'Kitap',
@@ -200,7 +200,7 @@ const seedDatabase = async () => {
             },
             {
                 name: 'Hayvan Çiftliği',
-                description: 'Politik taşlamanın sembol romanı',
+                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non purus sapien. Donec vitae lacus ultricies, mollis nisi id, vehicula ex. Integer quis eleifend turpis. Quisque luctus sapien nulla, pretium tristique nulla ornare eget. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus vitae feugiat arcu. Quisque sed interdum dolor.',
                 price: 75,
                 stock: 100,
                 category: 'Kitap',
@@ -208,7 +208,7 @@ const seedDatabase = async () => {
             },
             {
                 name: 'Sapiens',
-                description: 'İnsanlık tarihine derin bir bakış',
+                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non purus sapien. Donec vitae lacus ultricies, mollis nisi id, vehicula ex. Integer quis eleifend turpis. Quisque luctus sapien nulla, pretium tristique nulla ornare eget. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus vitae feugiat arcu. Quisque sed interdum dolor.',
                 price: 140,
                 stock: 80,
                 category: 'Kitap',
@@ -216,7 +216,7 @@ const seedDatabase = async () => {
             },
             {
                 name: 'Suç ve Ceza',
-                description: 'Klasik Rus edebiyatının zirvesi',
+                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non purus sapien. Donec vitae lacus ultricies, mollis nisi id, vehicula ex. Integer quis eleifend turpis. Quisque luctus sapien nulla, pretium tristique nulla ornare eget. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus vitae feugiat arcu. Quisque sed interdum dolor.',
                 price: 130,
                 stock: 60,
                 category: 'Kitap',
@@ -224,7 +224,7 @@ const seedDatabase = async () => {
             },
             {
                 name: 'Bilinmeyen Bir Kadının Mektubu',
-                description: 'Stefan Zweig’dan kısa ama etkileyici bir eser',
+                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non purus sapien. Donec vitae lacus ultricies, mollis nisi id, vehicula ex. Integer quis eleifend turpis. Quisque luctus sapien nulla, pretium tristique nulla ornare eget. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus vitae feugiat arcu. Quisque sed interdum dolor.',
                 price: 55,
                 stock: 90,
                 category: 'Kitap',
