@@ -1,20 +1,25 @@
 import { useEffect, useState } from "react";
 import { loginUser } from "../api/auth";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import { useAuth } from "../contexts/authContext";
+import toast from "react-hot-toast";
 
 const Login = () => {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [error, setError] = useState('');
+    const navigate = useNavigate();
+    const {setUser} = useAuth();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
             const data = await loginUser(email, password);
-            console.log("giriş işlemi sonucu data ->", data);
-        } catch (err) {
-            setError('Giriş başarısız, lütfen bilgilerinizi kontrol edin.');
+            setUser(data.user);
+            toast.success(`Giriş başarılı, hoş geldin ${data.user.username}`);
+            navigate('/');
+        } catch (error) {
+            console.error(error);
         }
     }
 
@@ -86,7 +91,6 @@ const Login = () => {
                     <NavLink to={"/register"} className="font-semibold text-indigo-600 hover:text-indigo-500">
                         Hemen üye olun!
                     </NavLink>
-                    {error && <span className="block">{error}</span>}
                 </p>
             </div>
         </div>

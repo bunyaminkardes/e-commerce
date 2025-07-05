@@ -1,75 +1,152 @@
+// import { useParams } from "react-router-dom";
+// import Layout from "../components/layout";
+// import { useState } from "react";
+// import { useEffect } from "react";
+// import { getProductsById } from "../api/products";
+// import { useCart } from "../contexts/cartContext";
+
+// const ProductDetail = () => {
+
+//     const { id } = useParams();
+//     const [product, setProduct] = useState({});
+//     const {addToCart} = useCart();
+
+//     useEffect(() => {
+//         const fetchProductById = async () => {
+//             try {
+//                 const data = await getProductsById(id);
+//                 setProduct(data);
+//             } catch (error) {
+//                 console.error(error);
+//             }
+//         }
+//         fetchProductById();
+//     }, [id]);
+
+//     useEffect(() => {
+//         console.log("product ->", product);
+//     }, [product])
+
+//     return (
+//         <Layout>
+//             <div className="container">
+//                 asd
+//             </div>
+//         </Layout>
+//     );
+// }
+
+// export default ProductDetail;
+
 import { useParams } from "react-router-dom";
 import Layout from "../components/layout";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { getProductsById } from "../api/products";
+import { useCart } from "../contexts/cartContext";
 
 const ProductDetail = () => {
-
     const { id } = useParams();
-    const [product, setProduct] = useState({});
+    const [product, setProduct] = useState(null);
+    const [selectedImage, setSelectedImage] = useState(null);
+    const [quantity, setQuantity] = useState(1);
+    const { addToCart } = useCart();
 
     useEffect(() => {
         const fetchProductById = async () => {
             try {
                 const data = await getProductsById(id);
                 setProduct(data);
+                if (data.images && data.images.length > 0) {
+                    setSelectedImage(data.images[0]);
+                }
             } catch (error) {
                 console.error(error);
             }
-        }
+        };
         fetchProductById();
     }, [id]);
 
-    useEffect(() => {
-        console.log("product ->", product);
-    }, [product])
+    const increaseQuantity = () => {
+        if (product && quantity < product.stock) setQuantity(quantity + 1);
+    };
+
+    const decreaseQuantity = () => {
+        if (quantity > 1) setQuantity(quantity - 1);
+    };
+
+    const handleAddToCart = () => {
+        if (!product) return;
+        addToCart({ ...product, quantity });
+    };
+
+    if (!product) return <Layout><div className="container p-6">Yükleniyor...</div></Layout>;
 
     return (
         <Layout>
-            <div className="container mx-auto p-4 py-[3rem]">
-                <div className="flex flex-col md:flex-row gap-8">
-                    <div className="w-full md:w-1/3 p-4 bg-white rounded-lg shadow-md flex items-center justify-center">
-                        <img
-                            src={product.images}
-                            alt="Ürün Görseli"
-                            className="max-w-full h-auto rounded-lg"
-                        />
+            <div className="container flex flex-col md:flex-row gap-8 py-[3rem]">
+                <div className="md:w-1/2">
+                    <img
+                        src={selectedImage || "/default-image.png"}
+                        alt={product.name}
+                        className="w-full rounded-lg border"
+                    />
+                    <div className="flex mt-4 gap-3">
+                        {product.images?.map((img, i) => (
+                            <img
+                                key={i}
+                                src={img}
+                                alt={`${product.name} ${i + 1}`}
+                                className={`w-16 h-16 object-cover rounded cursor-pointer border ${selectedImage === img ? "border-purple-600" : "border-gray-300"
+                                    }`}
+                                onClick={() => setSelectedImage(img)}
+                            />
+                        ))}
                     </div>
-                    <div className="w-full md:w-1/2 p-6 bg-white rounded-lg shadow-md">
-                        <h1 className="text-3xl font-bold mb-4 text-gray-800">{product.name}</h1>
-                        <p className="text-gray-600 mb-6 text-lg">{product.description}</p>
-                        <ul className="list-disc list-inside text-gray-700 mb-6">
-                            <li className="mb-2">Ürün Fiyatı: {product.price}₺</li>
-                            <li className="mb-2">Stok Miktarı: {product.stock} adet</li>
-                            <li className="mb-2">Ürün Kategorisi: {product.category}</li>
-                        </ul>
-                        <div className="text-2xl font-semibold text-indigo-700 mb-4">
-                            Fiyat: {product.price} TL
-                        </div>
-                        <button className="bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition duration-300 ease-in-out">
-                            Sepete Ekle
-                        </button>
+                </div>
+                <div className="md:w-1/2 flex flex-col">
+                    <h1 className="text-3xl font-semibold mb-2">{product.name}</h1>
+
+                    <div className="flex items-center gap-4 mb-4">
+                        <span className="text-2xl font-bold text-purple-700">{product.price}₺</span>
+                        {product.oldPrice && (
+                            <span className="text-gray-400 line-through">{product.oldPrice}₺</span>
+                        )}
                     </div>
-                    <div className="w-full md:w-1/4 p-4 bg-white rounded-lg shadow-md">
-                        <h2 className="text-2xl font-bold mb-4 text-gray-800">Ek Bilgiler</h2>
-                        <p className="text-gray-600 mb-4">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non purus sapien. Donec vitae lacus ultricies, mollis nisi id, vehicula ex. Integer quis eleifend turpis.
-                        </p>
-                        <div className="mb-4">
-                            <h3 className="font-semibold text-gray-700 mb-2">Kargolama:</h3>
-                            <p className="text-gray-600">Ücretsiz kargo! 2-3 iş günü içinde teslimat.</p>
+
+                    <p className="text-gray-700 mb-6 whitespace-pre-wrap">{product.description}</p>
+
+                    <div className="flex items-center gap-4 mb-6">
+                        <div className="flex items-center border rounded">
+                            <button
+                                onClick={decreaseQuantity}
+                                className="px-3 py-1 hover:bg-gray-200 transition"
+                            >
+                                -
+                            </button>
+                            <span className="px-4">{quantity}</span>
+                            <button
+                                onClick={increaseQuantity}
+                                className="px-3 py-1 hover:bg-gray-200 transition"
+                            >
+                                +
+                            </button>
                         </div>
-                        <div>
-                            <h3 className="font-semibold text-gray-700 mb-2">Müşteri Yorumları:</h3>
-                            <p className="text-yellow-500">★★★★★</p>
-                            <p className="text-gray-600 text-sm">"Bu ürünü çok beğendim, beklediğimden daha iyi!" - Ayşe Y.</p>
-                        </div>
+                        <span className="text-sm text-gray-500">
+                            Stokta {product.stock ?? 0} adet var
+                        </span>
                     </div>
+
+                    <button
+                        onClick={handleAddToCart}
+                        className="bg-purple-600 text-white py-3 rounded hover:bg-purple-700 transition"
+                    >
+                        Sepete Ekle
+                    </button>
                 </div>
             </div>
         </Layout>
+
     );
-}
+};
 
 export default ProductDetail;
